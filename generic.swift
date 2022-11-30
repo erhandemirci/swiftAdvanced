@@ -46,3 +46,10 @@ erhan.lookAfter(dog3)
 erhan.lookAfter(dog4)
 print(christine.animals.count)
 
+
+func swappedThings <T, U> (_ x:T , _ y:U)-> (U,T) {
+    
+    return (y,x)
+}
+var sw = swappedThings("erhan", 10)
+
