@@ -1,0 +1,26 @@
+Task {
+    print("Doing some work on a task")
+    let sum = (1...10000000).reduce(0, +)
+    print("1 + 2 + 3 ... 100 = \(sum)")
+    
+}
+print("Doing some work on the main actor")
+
+let task = Task {
+print("Doing some work on a task")
+let sum = (1...100000000).reduce(0, +)
+try Task.checkCancellation()
+print("1 + 2 + 3 ... 100 = \(sum)")
+}
+print("Doing some work on the main actor 2 ")
+//task.cancel()
+
+
+/*
+Doing some work on a task
+Doing some work on the main actor
+Doing some work on the main actor 2 
+1 + 2 + 3 ... 100 = 50000005000000
+Doing some work on a task
+1 + 2 + 3 ... 100 = 5000000050000000
+*/
